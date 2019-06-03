@@ -54,9 +54,9 @@ for freq in frequencies:
     leftData = recData[:,0]
     leftInput = data[:,0]
     # This will get highest value in the sin wave
-    recordAmplitude = np.amax(leftData)
+    leftAmplitude = np.amax(leftData)
     # Find first instance where recorded is 50% of it's amplitude
-    first = np.argmax(leftData > .5 * recordAmplitude)
+    first = np.argmax(leftData > .5 * leftAmplitude)
     # Find first instance where generated is 50% of it's amplitude
     # Assume generated is all the same
     firstGen = np.argmax(leftInput > .5 * sendAmplitude)
@@ -67,14 +67,24 @@ for freq in frequencies:
     leftInput = data[:,0][firstGen:firstGen + wantedLength]
     lx = t[firstGen:firstGen + wantedLength]
 
+    # plot wave form against what is sent
+    # testing code
+    plt.figure(1)
+    plt.plot(lx, leftData, label='recorded')
+    plt.plot(lx, leftInput, label='sent')
+    plt.legend(loc="lower left")
+    plt.title('Left Wave Data')
+    plt.show()
+
+
     # Assume right channel is reference channel
     # right channel
     rightData = recData[:,1]
     rightInput = data[:,1]
     # This will get highest value in the sin wave
-    recordAmplitude = np.amax(rightData)
+    rightAmplitude = np.amax(rightData)
     # Find first instance where recorded is 50% of it's amplitude
-    first = np.argmax(rightData > .5 * recordAmplitude)
+    first = np.argmax(rightData > .5 * rightAmplitude)
     # Find first instance where generated is 50% of it's amplitude
     # Assume generated is all the same
     firstGen = np.argmax(rightInput > .5 * sendAmplitude)
@@ -85,9 +95,19 @@ for freq in frequencies:
     rightInput = data[:,1][firstGen:firstGen + wantedLength]
     rx = t[firstGen:firstGen + wantedLength]
 
+    # plot wave form against what is sent
+    # testing code
+    plt.figure(2)
+    plt.plot(rx, rightData, label='recorded')
+    plt.plot(rx, rightInput, label='sent')
+    plt.legend(loc="lower left")
+    plt.title('Right Wave Data')
+    plt.show()
+
+
     # This block of code is to plot the waveforms
-    # Discount osciloscope
-    plt.figure(1)
+    # Discount oscilloscope
+    plt.figure(3)
     plt.plot(lx, leftData, label='reflection')
     plt.plot(rx, rightData, label='reference')
     plt.legend(loc="lower left")
@@ -154,7 +174,7 @@ print(gamma)
 
 # last few lines are used as a discount smith chart
 # This value is fixed to the board
-Z0 = 1000
+Z0 = 620
 
 ZL = -((gamma+1)*Z0)/(gamma-1)
 print("ZL = "),
