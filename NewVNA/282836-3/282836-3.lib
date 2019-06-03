@@ -1,0 +1,32 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#(c) SnapEDA 2016 (snapeda.com)
+#This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA) with Design Exception 1.0
+#
+# 282836-3
+#
+DEF 282836-3 J 0 40 Y Y 1 L N
+F0 "J" -100 220 50 H V L BNN
+F1 "282836-3" -100 -300 50 H V L BNN
+F2 "TE_282836-3" 0 0 50 H I L BNN
+F3 "282836-3" 0 0 50 H I L BNN
+F4 "https://www.te.com/usa-en/product-282836-3.html?te_bu=Cor&te_type=disp&te_campaign=seda_glo_cor-seda-global-disp-prtnr-fy19-seda-model-bom-cta_sma-317_1&elqCampaignId=32493" 0 0 50 H I L BNN
+F5 "282836-3" 0 0 50 H I L BNN
+F6 "None" 0 0 50 H I L BNN
+F7 "Unavailable" 0 0 50 H I L BNN
+F8 "TE Connectivity" 0 0 50 H I L BNN
+F9 "None" 0 0 50 H I L BNN
+F10 "TERMI-BLOK PCB MOUNT 90 3P." 0 0 50 H I L BNN
+F11 "Compliant with Exemptions" 0 0 50 H I L BNN
+DRAW
+P 2 0 0 10 -100 200 -100 -200 N
+P 2 0 0 10 -100 -200 100 -200 N
+P 2 0 0 10 100 -200 100 200 N
+P 2 0 0 10 100 200 -100 200 N
+X 1 1 -200 100 100 R 40 40 0 0 P 
+X 2 2 -200 0 100 R 40 40 0 0 P 
+X 3 3 -200 -100 100 R 40 40 0 0 P 
+ENDDRAW
+ENDDEF
+#
+# End Library
