@@ -77,6 +77,7 @@ for freq in frequencies:
     # plt.title('left channel')
     # plt.show()
 
+
     # Assume right channel is reference channel
     # right channel
     rightData = recData[:, 1]
@@ -104,9 +105,16 @@ for freq in frequencies:
     # plt.title('right channel')
     # plt.show()
 
+    plt.figure(1)
+    plt.plot(lx, leftData, label='reference')
+    plt.plot(rx, rightData, label='reflection')
+    plt.legend(loc="lower left")
+    plt.title('Reference vs Reflected')
+    plt.show()
+
     # Fast Fourier Transform
 
-    # fftshift should shift off the dc
+    # fftshift shows only non negative frequencies
     reference = np.fft.fftshift(np.fft.fft(leftData / N))
     reflection = np.fft.fftshift(np.fft.fft(rightData / N))
 
