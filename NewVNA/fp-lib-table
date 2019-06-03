@@ -1,0 +1,8 @@
+(fp_lib_table
+  (lib (name Connector_Audio)(type KiCad)(uri ${KIPRJMOD}/Connector_Audio.pretty)(options "")(descr ""))
+  (lib (name footprints)(type KiCad)(uri ${KIPRJMOD}/footprints.pretty)(options "")(descr ""))
+  (lib (name Jumper)(type KiCad)(uri ${KIPRJMOD}/Jumper.pretty)(options "")(descr ""))
+  (lib (name 282836-3)(type Legacy)(uri ${KIPRJMOD}/282836-3/282836-3.mod)(options "")(descr ""))
+  (lib (name TL071)(type Legacy)(uri ${KIPRJMOD}/TL071/TL071.mod)(options "")(descr ""))
+  (lib (name 3.5mmStereo)(type KiCad)(uri ${KIPRJMOD}/3.5mmStereo.pretty)(options "")(descr ""))
+)
