@@ -1,0 +1,39 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP BNC-ci
+D Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
+$CMP R
+D Resistor
+K r res resistor
+F ~
+$ENDCMP
+#
+$CMP TLV3202
+D Micro-Power, Pull-Pull Output, Dual Comparators, SOIC-8/VSSOP-8
+K dual comparator
+F http://www.ti.com/product/TLV3202
+$ENDCMP
+#
+$CMP FRDM_KL25Z
+D NXP Freedom development board
+K KL25Z
+F ~
+$ENDCMP
+#
+$CMP 74HC00
+D quad 2-input NAND gate
+K HCMOS nand 2-input
+F http://www.ti.com/lit/gpn/sn74hc00
+$ENDCMP
+#
+$CMP 74HC74
+D Dual D Flip-flop, Set & Reset
+K HCMOS DFF
+F http://www/ti.com/lit/gpn/sn74hc74
+$ENDCMP
+#
+#End Doc Library

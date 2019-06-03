@@ -1,0 +1,40 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#(c) SnapEDA 2016 (snapeda.com)
+#This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA) with Design Exception 1.0
+#
+# TL072
+#
+DEF TL072 U 0 40 Y N 2 L N
+F0 "U" 200 250 50 H V L BNN
+F1 "TL072" 200 -300 50 H V L BNN
+F2 "DIP794W45P254L1060H508Q8" 0 0 50 H I L BNN
+F3 "None" 0 0 50 H I L BNN
+F4 "Unavailable" 0 0 50 H I L BNN
+F5 "TL072" 0 0 50 H I L BNN
+F6 "SOIC-8 STMicroelectronics" 0 0 50 H I L BNN
+F7 "Wide Bandwidth Dual JFET Input Operational Amplifier 8-PDIP 0 to 70" 0 0 50 H I L BNN
+F8 "STMicroelectronics" 0 0 50 H I L BNN
+DRAW
+P 2 1 0 10 -200 300 -200 -300 N
+P 2 1 0 10 -200 -300 100 -150 N
+P 2 1 0 10 100 -150 400 0 N
+P 2 1 0 10 400 0 100 150 N
+P 2 1 0 10 100 150 -200 300 N
+P 2 1 0 10 100 200 100 150 N
+P 2 1 0 10 100 -150 100 -200 N
+X 1IN+ 3 -300 100 100 R 40 40 1 0 I 
+X 1IN- 2 -300 -100 100 R 40 40 1 0 I 
+X 1OUT 1 500 0 100 L 40 40 1 0 O 
+X VCC+ 8 100 300 100 D 40 40 1 0 W 
+X VCC- 4 100 -300 100 U 40 40 1 0 W 
+P 2 2 0 10 -200 300 -200 -300 N
+P 2 2 0 10 -200 -300 400 0 N
+P 2 2 0 10 400 0 -200 300 N
+X 2IN+ 5 -300 100 100 R 40 40 2 0 I 
+X 2IN- 6 -300 -100 100 R 40 40 2 0 I 
+X 2OUT 7 500 0 100 L 40 40 2 0 O 
+ENDDRAW
+ENDDEF
+#
+# End Library

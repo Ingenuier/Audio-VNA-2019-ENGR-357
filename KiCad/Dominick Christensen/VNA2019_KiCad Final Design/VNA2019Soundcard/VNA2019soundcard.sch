@@ -1,0 +1,439 @@
+EESchema Schematic File Version 4
+LIBS:VNA2019soundcard-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "ENGR 357 VNA Sound Card Project"
+Date "2019-05-16"
+Rev "V6"
+Comp "Walla WAlla University"
+Comment1 "Dominick Christensen"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:R R2
+U 1 1 5CD4B4B1
+P 2050 1400
+F 0 "R2" H 2120 1446 50  0000 L CNN
+F 1 "R" H 2120 1355 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805" V 1980 1400 50  0001 C CNN
+F 3 "~" H 2050 1400 50  0001 C CNN
+	1    2050 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R7
+U 1 1 5CD4C0CF
+P 2650 1400
+F 0 "R7" H 2720 1446 50  0000 L CNN
+F 1 "R" H 2720 1355 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805" V 2580 1400 50  0001 C CNN
+F 3 "~" H 2650 1400 50  0001 C CNN
+	1    2650 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5CD4CCBC
+P 2050 2100
+F 0 "R3" H 2120 2146 50  0000 L CNN
+F 1 "R" H 2120 2055 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805" V 1980 2100 50  0001 C CNN
+F 3 "~" H 2050 2100 50  0001 C CNN
+	1    2050 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2050 1250 2350 1250
+Wire Wire Line
+	2050 1550 2050 1800
+Connection ~ 2050 1800
+Wire Wire Line
+	2050 1800 2050 1950
+Wire Wire Line
+	2050 2250 2350 2250
+Wire Wire Line
+	2050 1800 1900 1800
+Wire Wire Line
+	1900 1800 1900 2400
+$Comp
+L Device:R R4
+U 1 1 5CD54F26
+P 2250 2550
+F 0 "R4" H 2050 2600 50  0000 L CNN
+F 1 "R" H 2050 2500 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805" V 2180 2550 50  0001 C CNN
+F 3 "~" H 2250 2550 50  0001 C CNN
+	1    2250 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R6
+U 1 1 5CD5521B
+P 2450 2550
+F 0 "R6" H 2520 2596 50  0000 L CNN
+F 1 "R" H 2520 2505 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805" V 2380 2550 50  0001 C CNN
+F 3 "~" H 2450 2550 50  0001 C CNN
+	1    2450 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5CD5544F
+P 1800 3000
+F 0 "R1" H 1870 3046 50  0000 L CNN
+F 1 "R" H 1870 2955 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805" V 1730 3000 50  0001 C CNN
+F 3 "~" H 1800 3000 50  0001 C CNN
+	1    1800 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2250 2750 1800 2750
+Wire Wire Line
+	1800 2750 1800 2850
+Wire Wire Line
+	2250 2700 2250 2750
+Wire Wire Line
+	2450 2750 2450 2700
+Wire Wire Line
+	1900 2400 2250 2400
+Wire Wire Line
+	1800 3150 1800 3450
+$Comp
+L power:GND #PWR03
+U 1 1 5CD56CCC
+P 2350 2250
+F 0 "#PWR03" H 2350 2000 50  0001 C CNN
+F 1 "GND" H 2350 2350 50  0000 C CNN
+F 2 "" H 2350 2250 50  0001 C CNN
+F 3 "" H 2350 2250 50  0001 C CNN
+	1    2350 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2350 1250 2350 950 
+Wire Wire Line
+	2350 950  1400 950 
+Connection ~ 2350 1250
+Wire Wire Line
+	2350 1250 2650 1250
+Wire Wire Line
+	1400 3450 1800 3450
+Wire Notes Line
+	1750 2400 3850 2400
+Wire Wire Line
+	1400 3550 1550 3550
+Wire Wire Line
+	1550 3550 1550 1050
+Wire Wire Line
+	1550 1050 1400 1050
+$Comp
+L power:GND #PWR04
+U 1 1 5CD6431F
+P 2450 850
+F 0 "#PWR04" H 2450 600 50  0001 C CNN
+F 1 "GND" H 2550 700 50  0000 R CNN
+F 2 "" H 2450 850 50  0001 C CNN
+F 3 "" H 2450 850 50  0001 C CNN
+	1    2450 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01
+U 1 1 5CD64CAD
+P 1500 3350
+F 0 "#PWR01" H 1500 3100 50  0001 C CNN
+F 1 "GND" H 1550 3400 50  0000 R CNN
+F 2 "" H 1500 3350 50  0001 C CNN
+F 3 "" H 1500 3350 50  0001 C CNN
+	1    1500 3350
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	1750 3600 3850 3600
+Wire Notes Line
+	1750 1150 1750 3600
+Text Notes 2750 3550 0    50   ~ 0
+Differential To Single Ended Op Amp
+Wire Notes Line
+	1700 3800 1700 550 
+Wire Notes Line
+	1700 550  650  550 
+Wire Notes Line
+	650  550  650  3800
+Wire Notes Line
+	650  3800 1700 3800
+$Comp
+L Device:R R8
+U 1 1 5CD9228E
+P 2750 2750
+F 0 "R8" V 2650 2750 50  0000 L CNN
+F 1 "R" V 2550 2750 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805" V 2680 2750 50  0001 C CNN
+F 3 "~" H 2750 2750 50  0001 C CNN
+	1    2750 2750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2450 2750 2600 2750
+Wire Wire Line
+	2900 2750 3000 2750
+Wire Wire Line
+	3000 2750 3000 2800
+Wire Wire Line
+	1400 850  2450 850 
+Wire Wire Line
+	1400 3350 1500 3350
+$Comp
+L power:GND #PWR06
+U 1 1 5CD95420
+P 3000 2800
+F 0 "#PWR06" H 3000 2550 50  0001 C CNN
+F 1 "GND" H 3005 2627 50  0000 C CNN
+F 2 "" H 3000 2800 50  0001 C CNN
+F 3 "" H 3000 2800 50  0001 C CNN
+	1    3000 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3250 1900 3200 1900
+$Comp
+L Jumper:Jumper_3_Bridged12 JP1
+U 1 1 5CDBD759
+P 2800 2000
+F 0 "JP1" H 2800 2204 50  0000 C CNN
+F 1 "Jumper_3_Bridged12" H 2800 2113 50  0000 C CNN
+F 2 "PinHead_2.54:PinHeader_1x03_P2.54mm_Vertical" H 2800 2000 50  0001 C CNN
+F 3 "~" H 2800 2000 50  0001 C CNN
+	1    2800 2000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2800 2250 3250 2250
+Wire Wire Line
+	3250 2250 3250 2100
+Wire Wire Line
+	2800 1750 3100 1750
+Wire Wire Line
+	3100 1750 3100 2000
+Wire Wire Line
+	3100 2000 3250 2000
+$Comp
+L power:GND #PWR08
+U 1 1 5CDC27C0
+P 3200 2100
+F 0 "#PWR08" H 3200 1850 50  0001 C CNN
+F 1 "GND" H 3205 1927 50  0000 C CNN
+F 2 "" H 3200 2100 50  0001 C CNN
+F 3 "" H 3200 2100 50  0001 C CNN
+	1    3200 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3200 2100 3200 1900
+$Comp
+L Device:C C1
+U 1 1 5CDC54F0
+P 5100 1250
+F 0 "C1" H 5215 1296 50  0000 L CNN
+F 1 "C" H 5215 1205 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 5138 1100 50  0001 C CNN
+F 3 "~" H 5100 1250 50  0001 C CNN
+	1    5100 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:-15V #PWR010
+U 1 1 5CDB89E2
+P 4750 1300
+F 0 "#PWR010" H 4750 1400 50  0001 C CNN
+F 1 "-15V" H 4600 1300 50  0000 C CNN
+F 2 "" H 4750 1300 50  0001 C CNN
+F 3 "" H 4750 1300 50  0001 C CNN
+	1    4750 1300
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4600 1300 4750 1300
+Connection ~ 4600 1300
+$Comp
+L power:PWR_FLAG #FLG03
+U 1 1 5CDB6D5F
+P 4600 1300
+F 0 "#FLG03" H 4600 1375 50  0001 C CNN
+F 1 "PWR_FLAG" H 4600 1450 50  0000 C CNN
+F 2 "" H 4600 1300 50  0001 C CNN
+F 3 "~" H 4600 1300 50  0001 C CNN
+	1    4600 1300
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+15V #PWR07
+U 1 1 5CDB663B
+P 4750 1200
+F 0 "#PWR07" H 4750 1050 50  0001 C CNN
+F 1 "+15V" H 4900 1200 50  0000 C CNN
+F 2 "" H 4750 1200 50  0001 C CNN
+F 3 "" H 4750 1200 50  0001 C CNN
+	1    4750 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4750 1200 4600 1200
+Connection ~ 4600 1200
+$Comp
+L power:PWR_FLAG #FLG02
+U 1 1 5CDA6F46
+P 4600 1200
+F 0 "#FLG02" H 4600 1275 50  0001 C CNN
+F 1 "PWR_FLAG" H 4600 1373 50  0000 C CNN
+F 2 "" H 4600 1200 50  0001 C CNN
+F 3 "~" H 4600 1200 50  0001 C CNN
+	1    4600 1200
+	1    0    0    -1  
+$EndComp
+Text Notes 3150 1250 0    50   ~ 0
+Reflection Bridge
+Wire Notes Line
+	3850 1150 3850 3600
+Wire Notes Line
+	3850 1150 1750 1150
+Connection ~ 2450 2750
+Connection ~ 2250 2750
+Wire Wire Line
+	2050 3050 1950 3050
+$Comp
+L power:-15V #PWR011
+U 1 1 5CE15E32
+P 1950 3050
+F 0 "#PWR011" H 1950 3150 50  0001 C CNN
+F 1 "-15V" H 1950 3200 50  0000 C CNN
+F 2 "" H 1950 3050 50  0001 C CNN
+F 3 "" H 1950 3050 50  0001 C CNN
+	1    1950 3050
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	2650 2000 2650 2400
+Connection ~ 2650 2000
+Wire Wire Line
+	2650 2400 2450 2400
+Wire Wire Line
+	2650 1550 2650 2000
+$Comp
+L Connector_Generic:Conn_01x03 J4
+U 1 1 5CDE00CE
+P 4100 1200
+F 0 "J4" H 4100 1450 50  0000 C CNN
+F 1 "Conn_01x03" V 4200 1150 50  0000 C CNN
+F 2 "Connectors:Banana_Jack_3Pin" H 4100 1200 50  0001 C CNN
+F 3 "~" H 4100 1200 50  0001 C CNN
+	1    4100 1200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4300 1100 4300 900 
+Wire Wire Line
+	5200 900  5200 950 
+$Comp
+L power:GND #PWR012
+U 1 1 5CDE55F7
+P 5200 950
+F 0 "#PWR012" H 5200 700 50  0001 C CNN
+F 1 "GND" H 5350 950 50  0000 C CNN
+F 2 "" H 5200 950 50  0001 C CNN
+F 3 "" H 5200 950 50  0001 C CNN
+	1    5200 950 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 1200 4600 1200
+Wire Wire Line
+	4300 1300 4600 1300
+$Comp
+L Amplifier_Operational:TL071 U1
+U 1 1 5CDFC338
+P 2350 3150
+F 0 "U1" V 2304 3494 50  0000 L CNN
+F 1 "TL071" V 2395 3494 50  0000 L CNN
+F 2 "Package_SO:SOIC-8_5.23x5.23mm_P1.27mm" H 2400 3200 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 2500 3300 50  0001 C CNN
+	1    2350 3150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1800 3450 2350 3450
+Connection ~ 1800 3450
+$Comp
+L power:+15V #PWR02
+U 1 1 5CE06B27
+P 2650 3050
+F 0 "#PWR02" H 2650 2900 50  0001 C CNN
+F 1 "+15V" H 2800 3050 50  0000 C CNN
+F 2 "" H 2650 3050 50  0001 C CNN
+F 3 "" H 2650 3050 50  0001 C CNN
+	1    2650 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 2850 2450 2750
+Wire Wire Line
+	2250 2750 2250 2850
+NoConn ~ 2050 3250
+NoConn ~ 2050 3150
+$Comp
+L Connector_edit:AudioJack3.5_FrohneEdition J1
+U 1 1 5CE1B409
+P 1200 950
+F 0 "J1" H 1182 1275 50  0000 C CNN
+F 1 "AudioJack3.5_FrohneEdition" H 1182 1184 50  0000 C CNN
+F 2 "Tayda:Tayda_3.5mm_stereo_TRS_jack_A-853" H 1200 950 50  0001 C CNN
+F 3 "~" H 1200 950 50  0001 C CNN
+	1    1200 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_edit:AudioJack3.5_FrohneEdition J2
+U 1 1 5CE1C986
+P 1200 3450
+F 0 "J2" H 1182 3775 50  0000 C CNN
+F 1 "AudioJack3.5_FrohneEdition" H 1182 3684 50  0000 C CNN
+F 2 "Tayda:Tayda_3.5mm_stereo_TRS_jack_A-853" H 1200 3450 50  0001 C CNN
+F 3 "~" H 1200 3450 50  0001 C CNN
+	1    1200 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_edit:AudioJack3.5_FrohneEdition J3
+U 1 1 5CE1D106
+P 3450 2000
+F 0 "J3" H 3170 2025 50  0000 R CNN
+F 1 "AudioJack3.5_FrohneEdition" H 3170 1934 50  0000 R CNN
+F 2 "Tayda:Tayda_3.5mm_stereo_TRS_jack_A-853" H 3450 2000 50  0001 C CNN
+F 3 "~" H 3450 2000 50  0001 C CNN
+	1    3450 2000
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 900  5200 900 
+Wire Wire Line
+	4850 1400 5100 1400
+Wire Wire Line
+	4850 1400 4850 1300
+Wire Wire Line
+	4850 1300 4750 1300
+Connection ~ 4750 1300
+Wire Wire Line
+	4850 1200 4750 1200
+Connection ~ 4750 1200
+Wire Wire Line
+	4850 1200 4850 1100
+Wire Wire Line
+	4850 1100 5100 1100
+$EndSCHEMATC

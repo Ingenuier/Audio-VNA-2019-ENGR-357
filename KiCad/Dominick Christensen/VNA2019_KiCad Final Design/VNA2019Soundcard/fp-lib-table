@@ -1,0 +1,9 @@
+(fp_lib_table
+  (lib (name Jumper)(type KiCad)(uri C:/Users/gener/Documents/KiCAD/VNA2019_KiCad/Jumper.pretty)(options "")(descr ""))
+  (lib (name Connector_Audio)(type KiCad)(uri C:/Users/gener/Documents/KiCAD/VNA2019_KiCad/Connector_Audio.pretty)(options "")(descr ""))
+  (lib (name ee355_2019)(type KiCad)(uri C:/Users/gener/Documents/KiCAD/VNA2019_KiCad/ee355_2019.pretty)(options "")(descr ""))
+  (lib (name footprints)(type KiCad)(uri C:/Users/gener/Documents/KiCAD/VNA2019_KiCad/footprints.pretty)(options "")(descr ""))
+  (lib (name Package_SO)(type KiCad)(uri C:/Users/gener/Documents/KiCAD/VNA2019_KiCad/Package_SO.pretty)(options "")(descr ""))
+  (lib (name Tayda)(type KiCad)(uri C:/Users/gener/Documents/KiCAD/VNA2019_KiCad/Tayda.pretty)(options "")(descr ""))
+  (lib (name PinHead_2.54)(type KiCad)(uri C:/Users/gener/Documents/KiCAD/VNA2019_KiCad/PinHead_2.54.pretty)(options "")(descr ""))
+)
