@@ -49,7 +49,7 @@ for freq in frequencies:
     # will only display graph when recording is done?
     sd.wait()
 
-    # Assume for now that left channel is reference bridge    
+    # Left Channel Tip, reference
     # left channel
     leftData = recData[:,0]
     leftInput = data[:,0]
@@ -67,7 +67,7 @@ for freq in frequencies:
     leftInput = data[:,0][firstGen:firstGen + wantedLength]
     lx = t[firstGen:firstGen + wantedLength]
 
-    # Assume right channel is reflected channel
+    # Right Channel Ring, reflected
     # right channel
     rightData = recData[:,1]
     rightInput = data[:,1]
@@ -154,7 +154,7 @@ print(gamma)
 
 # last few lines are used as a discount smith chart
 # This value is fixed to the board
-Z0 = 1000
+Z0 = 620
 
 ZL = -((gamma+1)*Z0)/(gamma-1)
 print("ZL = "),
