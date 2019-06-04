@@ -1,5 +1,6 @@
 # Audio-VNA-2019-ENGR-357
 Audio Frequency VNA Project for Engineering Electronics II
+Dominick Christensen
 
 These are the setup instructions for the Reflection Bridge and Sound Card, these instructions were made with the Windows OS in mind.
 
