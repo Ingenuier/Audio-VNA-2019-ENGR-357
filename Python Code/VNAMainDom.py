@@ -54,6 +54,12 @@ for freq in frequencies:
     # left channel
     leftData = recData[:, 0]
     leftInput = data[:, 0]
+
+    # Greg test
+    plt.figure(1)
+    plt.plot(t, recData[:, 0])
+    plt.title('Greg Test: Left AKA Reference ')
+
     # This will get highest value in the sin wave
     recordAmplitude = np.amax(leftData)
     # Find first instance where recorded is 50% of it's amplitude
@@ -81,6 +87,9 @@ for freq in frequencies:
     # right channel
     rightData = recData[:, 1]
     rightInput = data[:, 1]
+
+
+
     # This will get highest value in the sin wave
     recordAmplitude = np.amax(rightData)
     # Find first instance where recorded is 50% of it's amplitude
@@ -103,6 +112,16 @@ for freq in frequencies:
     # plt.legend(loc="lower left")
     # plt.title('right channel')
     # plt.show()
+
+    plt.figure(2)
+    plt.plot(lx, leftData, label='reference')
+    plt.plot(rx, rightData, label='reflection')
+    plt.legend(loc="lower left")
+    plt.title('Reference vs Reflected')
+
+
+
+    plt.show()
 
     # Fast Fourier Transform
 
