@@ -40,69 +40,97 @@ for freq in frequencies:
     # TODO: Fix that issue cuase it's stupid
     # np.arange(start, stop, step, dtype = none)
     t = np.arange(0, timeToSample, 1 / fs)
+
     # data = sendAmplitude * np.sin(2 * np.pi * freq * t)   
     data = np.array([np.array([1,1]) * sendAmplitude * np.sin(2 * np.pi * freq * m) for m in t])
     
     # playrec plays and records data
     recData = sd.playrec(data, fs, channels=2)
     # print(recData)
+
     # will only display graph when recording is done?
     sd.wait()
 
+    # FIXME: left channel has a hard time recording data
+    # possibility it is a hardware issue
     # Assume for now that left channel is reflected bridge    
     # left channel
     leftData = recData[:,0]
     leftInput = data[:,0]
+
     # This will get highest value in the sin wave
     recordAmplitude = np.amax(leftData)
+
     # Find first instance where recorded is 50% of it's amplitude
     first = np.argmax(leftData > .5 * recordAmplitude)
+
     # Find first instance where generated is 50% of it's amplitude
     # Assume generated is all the same
     firstGen = np.argmax(leftInput > .5 * sendAmplitude)
+
     # This is where the recorded data is being chopped
     leftData = leftData[first:]    
+
     # Get wanted length of thehow to make matlab plots run simultaneous generated
     wantedLength = len(leftData)
     leftInput = data[:,0][firstGen:firstGen + wantedLength]
     lx = t[firstGen:firstGen + wantedLength]
 
+    # plot wave form against what is sent
+    # testing code
+    plt.figure(1)
+    plt.plot(lx, leftData, label='recorded')
+    plt.plot(lx, leftInput, label='sent')
+    plt.legend(loc="lower left")
+    plt.title('Left Wave Data')
+
     # Assume right channel is reference channel
     # right channel
     rightData = recData[:,1]
     rightInput = data[:,1]
+
     # This will get highest value in the sin wave
     recordAmplitude = np.amax(rightData)
+
     # Find first instance where recorded is 50% of it's amplitude
     first = np.argmax(rightData > .5 * recordAmplitude)
+
     # Find first instance where generated is 50% of it's amplitude
     # Assume generated is all the same
     firstGen = np.argmax(rightInput > .5 * sendAmplitude)
+
     # This is where the recorded data is being chopped
-    rightData = rightData[first:]    
+    rightData = rightData[first:]  
+  
     # Get wanted length of the generated
     wantedLength = len(rightData)
     rightInput = data[:,1][firstGen:firstGen + wantedLength]
     rx = t[firstGen:firstGen + wantedLength]
 
+    # plot wave form against what is sent
+    # testing code
+    plt.figure(2)
+    plt.plot(rx, rightData, label='recorded')
+    plt.plot(rx, rightInput, label='sent')
+    plt.legend(loc="lower left")
+    plt.title('Right Wave Data')
+
     # This block of code is to plot the waveforms
-    # Discount osciloscope
-    plt.figure(1)
-    plt.plot(lx, leftData, label='reflection')
-    plt.plot(rx, rightData, label='reference')
+    # Discount oscilloscope
+    plt.figure(3)
+    plt.plot(lx, leftData, label='reference')
+    plt.plot(rx, rightData, label='reflected')
     plt.legend(loc="lower left")
     plt.title('Reference vs Reflected')
-    plt.show()
-
 
     # TODO: figure out way to grab only the frequency value that I want   
     # Fast Fourier Transform
     
     # fftshift should shift off the dc 
-    reference = np.fft.fftshift(np.fft.fft(rightData/N))
-    reflection = np.fft.fftshift(np.fft.fft(leftData/N))
+    reference = np.fft.fftshift(np.fft.fft(leftData/N))
+    reflection = np.fft.fftshift(np.fft.fft(rightData/N))
 
-    # The frequency plotter for the fft does not work
+    # FIXME: The frequency plotter for the fft does not work
     # no clue why, but it was only used for testing so not too worried
     # plt.plot(frequencies,np.abs(reference))
     # plt.show()
@@ -148,15 +176,17 @@ for freq in frequencies:
 #plt.plot(frequencies, magnitudes)
 #plt.show()
 
+# TODO: do the calibration of open, short, and ZL of 620
+# TODO: average the reflectarray and refarray to be used here
 gamma = reflectMax/refMax
 print("gamma = "),
 print(gamma)
 
 # last few lines are used as a discount smith chart
 # This value is fixed to the board
-Z0 = 1000
+Z0 = 620
 
 ZL = -((gamma+1)*Z0)/(gamma-1)
 print("ZL = "),
 print(ZL)
-
+plt.show()
