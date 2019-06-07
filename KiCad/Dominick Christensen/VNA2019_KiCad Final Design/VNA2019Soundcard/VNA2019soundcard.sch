@@ -159,7 +159,7 @@ Wire Notes Line
 	1750 3600 3850 3600
 Wire Notes Line
 	1750 1150 1750 3600
-Text Notes 2750 3550 0    50   ~ 0
+Text Notes 2400 3550 0    50   ~ 0
 Differential To Single Ended Op Amp
 Wire Notes Line
 	1700 3800 1700 550 
