@@ -4,6 +4,19 @@ import sounddevice as sd
 import soundfile as sf
 import time
 
+
+def cart2pol(x, y):
+    rho = np.sqrt(x ** 2 + y ** 2)
+    phi = np.arctan2(y, x)
+    return (rho, phi)
+
+
+def pol2cart(rho, phi):
+    x = rho * np.cos(phi)
+    y = rho * np.sin(phi)
+    return (x, y)
+
+
 # Data on recording, etc on: https://python-sounddevice.readthedocs.io/en/0.3.12/usage.html#recording
 
 # Low Frequencies, Assume No Phase Shift
@@ -30,7 +43,7 @@ refArray = []
 reflectArray = []
 
 for freq in frequencies:
-    # TODO: run fft in every for loop on both left and right channel. 
+    # TODO: run fft in every for loop on both left and right channel.
 
     # Record starts a while after playback for some unknown reason
     # It usually starts about .07 seconds after playback, so...
@@ -71,7 +84,7 @@ for freq in frequencies:
     # This is where the recorded data is being chopped
     leftData = leftData[first:]
 
-    # Get wanted length of the how to make matlab plots run simultaneous generated
+    # Get wanted length of thehow to make matlab plots run simultaneous generated
     wantedLength = len(leftData)
     leftInput = data[:, 0][firstGen:firstGen + wantedLength]
     lx = t[firstGen:firstGen + wantedLength]
@@ -140,7 +153,7 @@ for freq in frequencies:
     # getting the only value that matters in the fft array
     reference = reference[1 + niter]
     # getting the magnitude
-    refMax = np.abs(reference)
+    refMax = reference
 
     # refMax = np.amax(refMax)
     # print("refmax: "),
@@ -154,7 +167,10 @@ for freq in frequencies:
     # getting the only value that matters in the fft array
     reflection = reflection[1 + niter]
     # getting rid of the imaginary part of all elements
-    reflectMax = np.abs(reflection)
+    reflectMax = reflection
+    Z = (reflectMax.real, reflectMax.imag)
+    print("Z: "),
+    print(Z)
 
     print("reflection: "),
     print(reflection)
@@ -175,17 +191,24 @@ for freq in frequencies:
 # plt.plot(frequencies, magnitudes)
 # plt.show()
 
+r1, theta1 = cart2pol(reflectMax.real, reflectMax.imag)
+r2, theta2 = cart2pol(refMax.real, refMax.imag)
+print(r1, r2)
+
 # TODO: do the calibration of open, short, and ZL of 620
 # TODO: average the reflectarray and refarray to be used here
-gamma = reflectMax / refMax
+gamma = (r1 * np.exp(1j * theta1)) / (r2 * np.exp(1j * theta2))
 print("gamma = "),
 print(gamma)
 
 # last few lines are used as a discount smith chart
 # This value is fixed to the board
-Z0 = 620
+Z0 = 1000
 
 ZL = -((gamma + 1) * Z0) / (gamma - 1)
 print("ZL = "),
 print(ZL)
 plt.show()
+
+
+
