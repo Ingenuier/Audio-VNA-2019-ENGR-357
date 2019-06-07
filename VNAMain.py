@@ -4,6 +4,16 @@ import sounddevice as sd
 import soundfile as sf
 import time
 
+# cartesian to polar, used to grab the corre
+def cart2pol(x, y):
+    rho = np.sqrt(x**2 + y**2)
+    phi = np.arctan2(y, x)
+    return(rho, phi)
+
+def pol2cart(rho, phi):
+    x = rho * np.cos(phi)
+    y = rho * np.sin(phi)
+    return(x, y)
 # Data on recording, etc on: https://python-sounddevice.readthedocs.io/en/0.3.12/usage.html#recording
 
 # Low Frequencies, Assume No Phase Shift
@@ -135,21 +145,21 @@ for freq in frequencies:
     # plt.plot(frequencies,np.abs(reference))
     # plt.show()
 
-    # getting rid of the imaginary part of all elements
-    
     # getting the only value that matters in the fft array
     reference = reference[1+niter]
     # getting the magnitude 
     refMax = reference
 
+    # getting rid of the imaginary part of all elements
+    # TODO: only get the real part of the element without removing sign
     # refMax = np.amax(refMax)
     # print("refmax: "),
-    # print(refMax)
-
+    print(refMax)
     # putting all the corrected values back into the array
     refArray.append(refMax)
     print("refarray: "),
     print(refArray)
+
 
     # getting the only value that matters in the fft array
     reflection = reflection[1+niter] 
@@ -159,7 +169,8 @@ for freq in frequencies:
     print("reflection: "),
     print(reflection)
 
-    # reflectMax = np.amax(reflectMax)
+    # TODO: only get the real part of the element without removing sign
+    reflectMax = np.amax(reflectMax)
     print("reflectmax: "),
     print(reflectMax)
 
@@ -175,7 +186,7 @@ for freq in frequencies:
 #plt.plot(frequencies, magnitudes)
 #plt.show()
 
-# TODO: do the calibration of open, short, and ZL of 620
+# TODO: do the calibration of open, short, and ZL of 1000
 # TODO: average the reflectarray and refarray to be used here
 gamma = reflectMax/refMax
 print("gamma = "),
@@ -183,7 +194,7 @@ print(gamma)
 
 # last few lines are used as a discount smith chart
 # This value is fixed to the board
-Z0 = 620
+Z0 = 1000
 
 ZL = -((gamma+1)*Z0)/(gamma-1)
 print("ZL = "),
@@ -191,12 +202,4 @@ print(ZL)
 plt.show()
 
 
-def cart2pol(x, y):
-    rho = np.sqrt(x**2 + y**2)
-    phi = np.arctan2(y, x)
-    return(rho, phi)
 
-def pol2cart(rho, phi):
-    x = rho * np.cos(phi)
-    y = rho * np.sin(phi)
-    return(x, y)
