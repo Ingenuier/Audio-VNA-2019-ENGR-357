@@ -1,10 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
+# library needed to create smith charts
+import smithplot as sp
 import sounddevice as sd
 import soundfile as sf
 import time
 
-# cartesian to polar, used to grab the corre
+# cartesian to polar, used to grab the cor1111re
 def cart2pol(x, y):
     rho = np.sqrt(x**2 + y**2)
     phi = np.arctan2(y, x)
@@ -195,7 +197,8 @@ print(gamma)
 # last few lines are used as a discount smith chart
 # This value is fixed to the board
 Z0 = 1000
-
+plt.figure(4)
+plt.smithplot(gamma)
 ZL = -((gamma+1)*Z0)/(gamma-1)
 print("ZL = "),
 print(ZL)
