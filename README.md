@@ -4,6 +4,8 @@ Dominick Christensen
 
 These are the setup instructions for the Reflection Bridge and Sound Card, these instructions were made with the Windows OS in mind.
 
+These instructions and additional documentation can be found on the wiki : https://github.com/Ingenuier/Audio-VNA-2019-ENGR-357/wiki
+
 Software Instructions:
 
     -git clone the repository ( https://github.com/Ingenuier/Audio-VNA-2019-ENGR-357.git )
